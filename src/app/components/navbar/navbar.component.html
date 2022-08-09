@@ -46,10 +46,10 @@
       <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
 
 
-        <li *ngFor="let link of navigation" class="flex items-center">
+        <li *ngFor="let link of navigation" class="flex items-center mr-2">
           <a class="hover:bg-yellow-100 hover:scale-105 active:bg-yellow-400 rounded-lg text-black px-3 py-2 flex items-center text-xs uppercase font-bold
           dark:hover:bg-slate-700 dark:active:bg-slate-600 dark:text-slate-300
-          " routerLink={{link.path}}>
+          " routerLink={{link.path}} routerLinkActive="bg-yellow-400 dark:bg-slate-600" ariaCurrentWhenActive="page">
             <span class="inline-block">{{link.name}}</span>
           </a>
         </li>

@@ -16,9 +16,10 @@ export class NavbarComponent implements OnInit {
   darkMode = false;
 
   navigation: links[] = [
-    { name: 'header', path: '/header' },
-    { name: 'about', path: '/about' },
-    { name: 'portfolio', path: '/portfolio' },
+    { name: 'home', path: 'home' },
+    { name: 'header', path: '#header' },
+    { name: 'about', path: '#about' },
+    { name: 'portfolio', path: 'portfolio' },
   ]
 
   constructor() { }
