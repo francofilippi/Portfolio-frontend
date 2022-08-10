@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgxTypedJsModule } from 'ngx-typed-js';
 
 // Componentes
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -20,7 +19,7 @@ import { IndexComponent } from './views/index/index.component';
 import { Page404Component } from './views/page404/page404.component';
 
 @NgModule({
-  declarations: [
+  declarations: [ // Aquí van los componentes o directivas que va a utilizar este modulo
     AppComponent,
     IndexComponent,
     NavbarComponent,
@@ -32,12 +31,12 @@ import { Page404Component } from './views/page404/page404.component';
     LayoutComponent,
     Page404Component
   ],
-  imports: [
+  imports: [  // Aquí van los modulos
     BrowserModule,
-    AppRoutingModule,
-    NgxTypedJsModule
+    AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [], // Aquí inyectamos dependencias / servicios
+  bootstrap: [AppComponent], // Aquí le indicamos nuestro componente principal (container)
+  exports: [], // Componentes que queremos exponer a otros modulos
 })
 export class AppModule { }

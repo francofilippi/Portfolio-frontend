@@ -13,12 +13,12 @@ export interface links {
 export class NavbarComponent implements OnInit {
 
   navbarOpen = false;
-  darkMode = false;
+
+  localStorageTheme: string | null = localStorage.getItem('theme')
 
   navigation: links[] = [
     { name: 'home', path: 'home' },
-    { name: 'header', path: '#header' },
-    { name: 'about', path: '#about' },
+    { name: 'sobre mi', path: '#about' },
     { name: 'portfolio', path: 'portfolio' },
   ]
 
@@ -26,19 +26,33 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
 
+
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (this.localStorageTheme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+      this.localStorageTheme = 'dark'
+      localStorage.setItem('theme', 'dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+      this.localStorageTheme = 'light'
+      localStorage.setItem('theme', 'light')
+    }
+
   }
 
-  setNavbarOpen() {
+  setNavbarOpen(): void {
     this.navbarOpen = !this.navbarOpen;
   }
 
-  toggleDarkMode() {
-    if (this.darkMode) {
+  toggleDarkMode(): void {
+    if (localStorage.getItem('theme') === 'dark' || !localStorage.getItem('theme')) {
+      localStorage.setItem('theme', 'light')
+      this.localStorageTheme = 'light'
       document.documentElement.classList.remove('dark')
-      this.darkMode = false
-    } else {
+    } else if (localStorage.getItem('theme') === 'light') {
+      localStorage.setItem('theme', 'dark')
       document.documentElement.classList.add('dark')
-      this.darkMode = true
+      this.localStorageTheme = 'dark'
     }
   }
 }
