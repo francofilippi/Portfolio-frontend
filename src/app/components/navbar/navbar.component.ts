@@ -19,7 +19,8 @@ export class NavbarComponent implements OnInit {
   navigation: links[] = [
     { name: 'home', path: 'home' },
     { name: 'sobre mi', path: '#about' },
-    { name: 'portfolio', path: 'portfolio' },
+    { name: 'portfolio', path: 'myportfolio' },
+    { name: 'shadows', path: 'shadows' },
   ]
 
   constructor() { }

@@ -7,13 +7,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['ui-sans-serif', 'system-ui'],
+        'sans': ['"Frank Ruhl Libre"', 'ui-sans-serif', 'system-ui'],
         'serif': ['ui-serif', 'Georgia'],
-        'mono': ['Kite One', 'ui-monospace', 'SFMono-Regular'],
+        'mono': ['ui-monospace', 'SFMono-Regular'],
         'display': ['Oswald'],
-        'body': ['"Open Sans"'],
-        'h1tablon': ['Cabin Sketch']
-      }
+        'body': ['"Lexend Deca"', '"Open Sans"'],
+        'h1tablon': ['Cabin Sketch'],
+        'kiteone': ['Kite One'],
+        'kalam': ['Kalam'],
+        'gloriaaleluya': ['Gloria Hallelujah'],
+        'eduqld': ['"Edu QLD Beginner"']
+      },
     },
   }
 }

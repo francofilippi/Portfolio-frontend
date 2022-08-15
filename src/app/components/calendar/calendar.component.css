@@ -1,0 +1,4 @@
+.dropshadowjimmy {
+  filter:
+    drop-shadow(1px 2px 2px rgba(221, 179, 39, 0.116)) drop-shadow(2px 4px 4px rgba(221, 179, 39, 0.116)) drop-shadow(3px 6px 6px rgba(221, 179, 39, 0.116));
+}

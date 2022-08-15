@@ -2,14 +2,17 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http'
 
 // Componentes
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
-import { PortfolioComponent } from './views/portfolio/portfolio.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ShadowsComponent } from './components/shadows/shadows.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { ProyectComponent } from './components/portfolio/proyect/proyect.component';
 
 // Layout
 import { LayoutComponent } from './layout/layout.component';
@@ -26,14 +29,17 @@ import { Page404Component } from './views/page404/page404.component';
     HeaderComponent,
     AboutComponent,
     CalendarComponent,
-    PortfolioComponent,
     FooterComponent,
     LayoutComponent,
-    Page404Component
+    Page404Component,
+    ShadowsComponent,
+    PortfolioComponent,
+    ProyectComponent,
   ],
   imports: [  // Aquí van los modulos
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [], // Aquí inyectamos dependencias / servicios
   bootstrap: [AppComponent], // Aquí le indicamos nuestro componente principal (container)

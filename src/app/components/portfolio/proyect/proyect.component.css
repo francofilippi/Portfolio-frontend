@@ -1,0 +1,9 @@
+.layeredbox1 {
+  box-shadow:
+    /* x-offset y-offset blur-raius (shadowcolor-deg saturation% lightness% / opacity)  */
+    0 1px 1px hsl(0deg 0% 0% / 0.030),
+    0 2px 2px hsl(0deg 0% 0% / 0.030),
+    0 4px 4px hsl(0deg 0% 0% / 0.030),
+    0 8px 8px hsl(0deg 0% 0% / 0.030),
+    0 16px 16px hsl(0deg 0% 0% / 0.030);
+}
