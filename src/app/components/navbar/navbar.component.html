@@ -1,24 +1,29 @@
-<nav class="fixed top-6 left-8 right-8 md:left-44 md:right-44 z-50 flex flex-wrap px-3 rounded-lg bg-gradient-to-b from-yellow-400 via-yellow-300 to-yellow-200 shadow py-2
- dark:bg-gradient-to-r dark:from-slate-700  dark:to-slate-800
-  ">
-  <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+<nav
+  class="absolute top-0 w-full flex flex-wrap py-2 text-frankpurple-800 dark:text-franklight-300 bg-franklight-400 border-franklight-600
+dark:bg-frankdark2-500 dark:border-frankdark2-400 border-b-2 sm:border-none sm:bg-transparent dark:sm:bg-transparent transition-all duration-300">
 
+  <div class="w-11/12 xl:w-4/6 mx-auto flex flex-wrap items-center justify-between">
     <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-      <a routerLink="/" class="text-yellow-700 hover:text-yellow-600 py-2 flex items-center text-md uppercase font-bold
-        dark:text-yellow-200 dark:hover:text-yellow-300
-        ">
-        <img src="assets/tablon-dev.png" alt="tablon-dev" class="w-4 md:w-4 lg:w-6 mr-3 drop-shadow-sm ">
-        <div class="flex flex-col text-sm font-kalam">
-          <span>Tablon</span>
-          <span class="ml-2">Developer
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block pb-1" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </span>
+
+      <!-- FRAN CODER LOGO -->
+      <a routerLink="/"
+        class="text-frankpurple-800 py-2 flex items-center text-md uppercase font-bold dark:text-franklight-200 dark:hover:text-franklight-300">
+        <!-- <img src="assets/tablon-dev.png" alt="tablon-dev" class="w-4 md:w-4 lg:w-6 mr-3 drop-shadow-sm "> -->
+        <div class="text-lg font-eduqld ">
+
+          <span class="bg-clip-text text-transparent backgroundGradient">FRAN</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-9 pblogo ml-1 -mr-6 drop-shadow-sm inline-block" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 4M6 16l-4-4 4-4" />
+          </svg>
+          <span>ODER</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-9 -ml-1 pb-1 drop-shadow-sm inline-block" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 4-4" />
+          </svg>
         </div>
       </a>
+
       <!-- MENU ICON -->
       <button class="menu cursor-pointer leading-none px-3 py-1 block lg:hidden" type="button" (click)="setNavbarOpen()"
         onclick="this.classList.toggle('opened'); this.setAttribute('aria-expanded', this.classList.contains('opened'))"
@@ -34,15 +39,14 @@
       </button>
     </div>
 
-    <div class="lg:flex flex-grow items-center ml-2 font-body" [ngClass]="{ hidden: !navbarOpen, block: navbarOpen }"
+    <div class="lg:flex flex-grow items-center ml-2" [ngClass]="{ hidden: !navbarOpen, block: navbarOpen }"
       id="example-navbar-warning">
-
       <ul class="flex flex-col lg:flex-row list-none lg:ml-auto">
 
         <li *ngFor="let link of navigation" class="flex items-center mr-2 ">
-          <a class="hover:bg-yellow-100 hover:scale-105 active:bg-yellow-400 rounded-lg text-yellow-900 px-3 py-2 flex items-center text-xs uppercase font-bold
-          dark:hover:bg-slate-700 dark:active:bg-slate-600 dark:text-slate-300
-          " routerLink={{link.path}} routerLinkActive="bg-yellow-400 dark:bg-slate-600" ariaCurrentWhenActive="page"
+          <a class="flex items-center text-xs uppercase rounded-lg px-3 py-2 font-bold hover:bg-franklight-100 hover:scale-105
+          active:bg-franklight-400  dark:hover:bg-frankdark-600 dark:active:bg-frankdark-600" routerLink={{link.path}}
+            routerLinkActive="bg-franklight-400 dark:bg-slate-600" ariaCurrentWhenActive="page"
             (click)="setNavbarOpen()">
             <span class="inline-block">{{link.name}}</span>
           </a>
@@ -54,7 +58,7 @@
 
             <!-- DARK MODE ICON -->
             <svg xmlns="http://www.w3.org/2000/svg" *ngIf="localStorageTheme === 'light'"
-              class="h-6 w-6 stroke-yellow-700 hover:stroke-yellow-600 " fill="none" viewBox="0 0 24 24"
+              class="h-6 w-6 stroke-franklight-700 hover:stroke-franklight-600 " fill="none" viewBox="0 0 24 24"
               stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round"
                 d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
@@ -68,11 +72,12 @@
           </a>
         </li>
 
+        <!-- C.V BUTTON -->
         <li class="flex items-center justify-center">
           <a download="" href="assets/pdf/CV-Franco_Daniel_Filippi.pdf">
             <button
-              class="font-kalam inline-flex bg-purple-500 text-white active:bg-purple-700 text-xs font-bold uppercase px-4 py-2 rounded
-            shadow hover:shadow-lg outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
+              class="font-kalam inline-flex text-franklight-300 backgroundGradient text-xs font-bold uppercase px-4 py-2 rounded
+            shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
               type="button">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor" stroke-width="2">
@@ -83,6 +88,7 @@
             </button>
           </a>
         </li>
+
       </ul>
 
     </div>

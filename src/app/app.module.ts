@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ShadowsComponent } from './components/shadows/shadows.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ProyectComponent } from './components/portfolio/proyect/proyect.component';
+import { FavsComponent } from './components/favs/favs.component';
 
 // Layout
 import { LayoutComponent } from './layout/layout.component';
@@ -20,6 +21,7 @@ import { LayoutComponent } from './layout/layout.component';
 // Vistas
 import { IndexComponent } from './views/index/index.component';
 import { Page404Component } from './views/page404/page404.component';
+import { EducationComponent } from './components/education/education.component';
 
 @NgModule({
   declarations: [ // Aquí van los componentes o directivas que va a utilizar este modulo
@@ -35,6 +37,8 @@ import { Page404Component } from './views/page404/page404.component';
     ShadowsComponent,
     PortfolioComponent,
     ProyectComponent,
+    FavsComponent,
+    EducationComponent
   ],
   imports: [  // Aquí van los modulos
     BrowserModule,

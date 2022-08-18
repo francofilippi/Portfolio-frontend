@@ -11,9 +11,19 @@
     </div>
     <div class="flex flex-wrap -m-4">
 
-      <div *ngFor="let proyecto of proyectos.results" class="xl:w-1/4 md:w-1/2 p-4">
-        <app-proyect proyecto></app-proyect>
-      </div>
+      <!-- DIRECTIVAS
+        Son como atributos que pueden cambiar la apariencia o el comportmaiento del DOM
+        Las hay de tipo
+            - Estructurales
+            - De atributos
+            - Personalizadas
+            - Componentes (directivas con template)
+      -->
+      <!-- *ngFor es una directiva de tipo estructural -->
+      <app-proyect (addToFavoritesClick)="addToFavorites($event)" [proyecto]="proyecto"
+        *ngFor="let proyecto of proyectos" class="xl:w-1/4 md:w-1/2 p-4"></app-proyect>
+      <!-- [proyecto]="proyect" le enviamos al componente hijo la propiedad proyecto-->
+
     </div>
   </div>
 </section>

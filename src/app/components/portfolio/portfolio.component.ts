@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { tap } from 'rxjs';
+import { Favorites } from '../favorites.service';
 import { Proyect } from './interface/proyect';
 import { ProyectsService } from './services/proyects.service';
 
@@ -12,14 +13,18 @@ export class PortfolioComponent implements OnInit {
 
   proyectos!: Proyect[]
 
-  constructor(private proyectSvc: ProyectsService) { }
+  constructor(private proyectSvc: ProyectsService, private favoritesSvc: Favorites) { }
 
   ngOnInit(): void {
     this.proyectSvc.getProyects()
       .pipe(
-        tap((proyectos: any) => this.proyectos = proyectos)
+        tap((proyectos: any) => this.proyectos = proyectos.results)
       )
       .subscribe() // Para consumir el observable
   }
 
+  addToFavorites(proyecto: Proyect): void {
+    console.log('Added to favorites', proyecto);
+    this.favoritesSvc.updateFavs(proyecto)
+  }
 }

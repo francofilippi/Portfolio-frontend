@@ -27,7 +27,6 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
 
-
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
     if (this.localStorageTheme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark')

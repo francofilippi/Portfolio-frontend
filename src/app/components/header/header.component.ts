@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Favorites } from '../favorites.service';
 import Typewriter from './Typewriter';
 
 @Component({
@@ -7,7 +8,12 @@ import Typewriter from './Typewriter';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  constructor() { }
+
+  quantity$ = this.favoritesSvc.quantityAction$;
+  total$ = this.favoritesSvc.totalAction$;
+  favs$ = this.favoritesSvc.favAction$;
+
+  constructor(private favoritesSvc: Favorites) { }
 
   ngOnInit(): void {
 
